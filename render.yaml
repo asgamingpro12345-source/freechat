@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: minipix-bot
+    env: node
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: node index.js
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: BOT_OWNER_ID
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production
